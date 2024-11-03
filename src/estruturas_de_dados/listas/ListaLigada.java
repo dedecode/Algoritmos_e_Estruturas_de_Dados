@@ -1,6 +1,6 @@
 package estruturas_de_dados.listas;
 
-public class ListaLigada /*implements Lista */ {
+public class ListaLigada implements Lista{
     private No head;   
     private int tamanho;
 
@@ -37,13 +37,38 @@ public class ListaLigada /*implements Lista */ {
             novoNo.proximo = head;
             head = novoNo;
         }else{
-            for(int i = 0; i < index - 1; i++){
+            for(int i = 0; i < index - 1; i++){//objetivo: chegar no Nó anterior ao indice desejado.
             atual = atual.proximo; 
             } 
-        novoNo.proximo = atual.proximo;
-        atual.proximo = novoNo;
+        novoNo.proximo = atual.proximo;//meu novo Nó irá apontar para o antigo Nó do indice escolhido.
+        atual.proximo = novoNo;//o Nó anterior ao indice escolhido apontará para novo Nó.
         }tamanho++;
         }
+    
+    public void remover(int indice){
+        if (indice < 0 || indice > (tamanho - 1)){
+            throw new IndexOutOfBoundsException("Índice inválido");
+        }
+        No atual = head;
+        if (indice == 0){
+            head = head.proximo;
+        }else{
+        for (int i = 0; i < indice - 1; i++){
+            atual = atual.proximo;
+        }
+        atual.proximo = atual.proximo.proximo;
+        }
+        tamanho--;
+    }
+    
+    public void trocar(int elemento, int indice){
+        No atual = head;
+        for(int i = 0; i < indice; i++){
+            atual = atual.proximo;
+        }
+        atual.valor = elemento;
+    }
+    
     public int pegar(int indice) {
         if (indice < 0 || indice >= tamanho) {
             throw new IndexOutOfBoundsException("Índice inválido");
@@ -57,5 +82,20 @@ public class ListaLigada /*implements Lista */ {
 
     public int pegarTamanhoLista() {
         return tamanho;
+    }
+
+    public void mostrarLista(){
+        System.out.print("[ ");
+        No atual = head;
+        while(atual != null){
+            if(atual.proximo != null){
+            System.out.print(atual.valor + ", ");
+            }else{
+                System.out.print(atual.valor);
+            }
+            atual = atual.proximo;
+        }
+        System.out.println(" ]");
+
     }
 }
