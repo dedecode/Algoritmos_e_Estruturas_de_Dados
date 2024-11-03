@@ -19,16 +19,16 @@ public class ArrayList implements Lista{
     }
 
     @Override
-    public void adicionar(int element) {
+    public void adicionar(int elemento) {
     if(this.tamanho == this.capacidade){
             garantirCapacidade();
         }
-        this.elementos[this.tamanho] = element;
+        this.elementos[this.tamanho] = elemento;
         this.tamanho++;
     }
 
     @Override
-    public void adicionarNoIndice(int element, int index) {
+    public void adicionarNoIndice(int elemento, int index) {
         if(index < 0 || index >= this.tamanho){
             throw new RuntimeException("Indice inválido: " + index);
         }
@@ -38,7 +38,7 @@ public class ArrayList implements Lista{
         for(int i = this.tamanho - 1; i >= index; i--){
             this.elementos[i + 1] = this.elementos[i];
         }
-        this.elementos[index] = element;
+        this.elementos[index] = elemento;
         tamanho++;
     }
 
@@ -61,11 +61,11 @@ public class ArrayList implements Lista{
     }
 
     @Override
-    public void trocar(int element, int index) {
+    public void trocar(int elemento, int index) {
         if(index < 0 || index >= this.tamanho){
             throw new RuntimeException("Indice inválido: " + index);
         }
-        this.elementos[index] = element;
+        this.elementos[index] = elemento;
     }
 
     @Override
