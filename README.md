@@ -1,4 +1,4 @@
-# Estruturas de Dados
+# Estruturas de Dados e Algoritmos
 
 Repositório focado na aprendizagem :)
 
