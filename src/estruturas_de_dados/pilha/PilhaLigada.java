@@ -1,6 +1,6 @@
 package estruturas_de_dados.pilha;
 
-public class Stack implements Pilha{
+public class PilhaLigada implements Pilha{
 
     @Override
     public void empilhar(int valor) {
@@ -13,7 +13,7 @@ public class Stack implements Pilha{
     }
 
     @Override
-    public int topo() {
+    public int OlharTopo() {
         return 0;
     }
 

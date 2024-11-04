@@ -6,7 +6,7 @@ public interface Pilha {
 
         int desempilhar();
 
-        int topo();
+        int OlharTopo();
 
         boolean estaVazia();
 
