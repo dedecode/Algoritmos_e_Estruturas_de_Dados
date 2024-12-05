@@ -4,7 +4,7 @@ public interface Fila {
     
         void enfileirar(int elemento);
     
-        int desenfileirar();
+        Integer desenfileirar();
    
         int olharFrente();
     
