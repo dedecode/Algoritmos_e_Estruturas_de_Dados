@@ -1,6 +1,6 @@
-package estruturas_de_dados.listas;
+package estruturas_de_dados.interfaces;
 
-public interface Lista {
+public interface InterfaceLista {
 
         void adicionar(int elemento);
 

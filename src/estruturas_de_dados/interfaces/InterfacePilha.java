@@ -1,6 +1,6 @@
-package estruturas_de_dados.pilha;
+package estruturas_de_dados.interfaces;
 
-public interface Pilha {
+public interface InterfacePilha {
 
         void empilhar(int valor);
 
