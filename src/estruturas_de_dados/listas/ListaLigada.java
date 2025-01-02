@@ -1,6 +1,8 @@
 package estruturas_de_dados.listas;
 
-public class ListaLigada implements Lista{
+import estruturas_de_dados.interfaces.InterfaceLista;
+
+public class ListaLigada implements InterfaceLista{
     private No head;   
     private int tamanho;
 
@@ -13,6 +15,7 @@ public class ListaLigada implements Lista{
             this.proximo = null;
         }
     }
+    @Override
     public void adicionar(int elemento) {
         No novoNo = new No(elemento);
        if(head == null){ //se a lista estiver vazia meu novo nó será a head.
@@ -27,6 +30,7 @@ public class ListaLigada implements Lista{
         }
     tamanho++;//apos essa adição o atributo tamanho da lista deve aumentar.
     }
+    @Override
     public void adicionarNoIndice(int elemento, int index){
         if (index < 0 || index > tamanho) {
             throw new IndexOutOfBoundsException("Índice inválido");
@@ -45,7 +49,8 @@ public class ListaLigada implements Lista{
         }tamanho++;
         }
     
-    public void remover(int indice){
+        @Override
+        public void remover(int indice){
         if (indice < 0 || indice > (tamanho - 1)){
             throw new IndexOutOfBoundsException("Índice inválido");
         }
@@ -61,6 +66,7 @@ public class ListaLigada implements Lista{
         tamanho--;
     }
     
+    @Override
     public void trocar(int elemento, int indice){
         No atual = head;
         for(int i = 0; i < indice; i++){
@@ -69,6 +75,7 @@ public class ListaLigada implements Lista{
         atual.valor = elemento;
     }
     
+    @Override
     public int pegar(int indice) {
         if (indice < 0 || indice >= tamanho) {
             throw new IndexOutOfBoundsException("Índice inválido");
@@ -80,6 +87,7 @@ public class ListaLigada implements Lista{
         return atual.valor;
     }
 
+    @Override
     public int pegarTamanhoLista() {
         return tamanho;
     }
