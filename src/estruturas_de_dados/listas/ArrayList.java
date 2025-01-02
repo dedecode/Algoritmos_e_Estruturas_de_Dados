@@ -1,6 +1,8 @@
 package estruturas_de_dados.listas;
 
-public class ArrayList implements Lista{
+import estruturas_de_dados.interfaces.InterfaceLista;
+
+public class ArrayList implements InterfaceLista{
 
     private int tamanho;//representa o numero de elementos dentro do array
     public int capacidade = 10;//representa o tamnho do array

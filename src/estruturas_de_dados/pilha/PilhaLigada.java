@@ -1,6 +1,8 @@
 package estruturas_de_dados.pilha;
 
-public class PilhaLigada implements Pilha{
+import estruturas_de_dados.interfaces.InterfacePilha;
+
+public class PilhaLigada implements InterfacePilha{
     private No topo;
     private int tamanho;
     

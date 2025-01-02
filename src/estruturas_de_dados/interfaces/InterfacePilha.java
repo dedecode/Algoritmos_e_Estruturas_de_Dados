@@ -2,14 +2,14 @@ package estruturas_de_dados.interfaces;
 
 public interface InterfacePilha {
 
-        void empilhar(int valor);
+    void empilhar(int valor);
 
-        int desempilhar();
+    int desempilhar();
 
-        int OlharTopo();
+    int OlharTopo();
 
-        boolean estaVazia();
+    boolean estaVazia();
 
-        int tamanho();
+    int tamanho();
 
 }
