@@ -113,7 +113,7 @@ public class ArvoreBuscaBinaria implements InterfaceArvoreBinaria {
     public void percursoPreOrdem() {
         percursoPreOrdemRecursivo(raiz);
 }
-// deixar mais bonitinho o print do percuso
+// deixar mais bonitinho o print do percurso
 private void percursoPreOrdemRecursivo(No atual) {
     if (atual != null) {
         System.out.print(atual.valor + " "); // Visita o nó
