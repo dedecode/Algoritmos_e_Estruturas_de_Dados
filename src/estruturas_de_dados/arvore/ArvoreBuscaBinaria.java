@@ -100,16 +100,6 @@ public class ArvoreBuscaBinaria implements InterfaceArvoreBinaria {
     }
 
     @Override
-    public void inserirEsquerda(int valor) {
-        raiz.esquerdo = new No(valor);
-    }
-
-    @Override
-    public void inserirDireita(int valor) {
-        raiz.direito = new No(valor);
-    }
-
-    @Override
     public int getFilhoEsquerda() {
         return raiz.esquerdo != null ? raiz.esquerdo.valor : -1;
     }
@@ -118,6 +108,45 @@ public class ArvoreBuscaBinaria implements InterfaceArvoreBinaria {
     public int getFilhoDireita() {
         return raiz.direito != null ? raiz.direito.valor : -1;
     }
+
+    @Override
+    public void percursoPreOrdem() {
+        percursoPreOrdemRecursivo(raiz);
+}
+// deixar mais bonitinho o print do percuso
+private void percursoPreOrdemRecursivo(No atual) {
+    if (atual != null) {
+        System.out.print(atual.valor + " "); // Visita o nó
+        percursoPreOrdemRecursivo(atual.esquerdo); // Percorre o filho esquerdo
+        percursoPreOrdemRecursivo(atual.direito); // Percorre o filho direito
+    }
+}
+
+    @Override
+    public void percursoEmOrdem() {
+        percursoEmOrdemRecursivo(raiz);
+}
+
+private void percursoEmOrdemRecursivo(No atual) {
+    if (atual != null) {
+        percursoEmOrdemRecursivo(atual.esquerdo); // Percorre o filho esquerdo
+        System.out.print(atual.valor + " "); // Visita o nó
+        percursoEmOrdemRecursivo(atual.direito); // Percorre o filho direito
+    }
+}
+
+    @Override
+    public void percursoPosOrdem() {
+        percursoPosOrdemRecursivo(raiz);
+}
+
+private void percursoPosOrdemRecursivo(No atual) {
+    if (atual != null) {
+        percursoPosOrdemRecursivo(atual.esquerdo); // Percorre o filho esquerdo
+        percursoPosOrdemRecursivo(atual.direito); // Percorre o filho direito
+        System.out.print(atual.valor + " "); // Visita o nó
+    }
+}
 
 }
 

@@ -1,6 +1,8 @@
 package estruturas_de_dados.fila;
 
-public class FilaSimples implements Fila {
+import estruturas_de_dados.interfaces.InterfaceFila;
+
+public class FilaSimples implements InterfaceFila {
    //Fila simples Ligada
    private No frente; //frente da fila
    private No fim; //final da fila (nenhuma função implementada)
